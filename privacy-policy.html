@@ -3,66 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - BTC Tracker</title>
+  <title>Privacy Policy – BTC Tracker</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0a0a0a; color: #e0e0e0; line-height: 1.7; padding: 0 16px 60px; }
-    header { background: #111; border-bottom: 2px solid #f7931a; padding: 24px 20px; text-align: center; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.7;
+      padding: 0 16px 60px;
+    }
+    header {
+      background: #111;
+      border-bottom: 2px solid #f7931a;
+      padding: 24px 20px;
+      text-align: center;
+    }
     header h1 { color: #f7931a; font-size: 1.5rem; letter-spacing: 3px; text-transform: uppercase; }
-    header p { color: #888; font-size: 0.85rem; margin-top: 6px; }
+    header p  { color: #888; font-size: 0.85rem; margin-top: 6px; }
     main { max-width: 720px; margin: 32px auto; }
-    h2 { color: #f7931a; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; margin: 32px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #f7931a44; }
+    h2 {
+      color: #f7931a;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin: 32px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #f7931a44;
+    }
     p, li { font-size: 0.95rem; color: #c0c0c0; }
     ul { padding-left: 20px; }
     li { margin: 6px 0; }
-    a { color: #f7931a; }
-    .card { background: #111; border: 1px solid #f7931a33; border-radius: 10px; padding: 18px 20px; margin-top: 10px; }
-    .badge { display: inline-block; background: #f7931a22; border: 1px solid #f7931a55; color: #f7931a; font-size: 0.75rem; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin-right: 6px; }
-    footer { text-align: center; color: #555; font-size: 0.8rem; margin-top: 48px; }
+    a { color: #f7931a; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .card {
+      background: #111;
+      border: 1px solid #f7931a33;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 10px;
+    }
+    .badge {
+      display: inline-block;
+      background: #f7931a22;
+      border: 1px solid #f7931a55;
+      color: #f7931a;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-right: 6px;
+    }
+    footer {
+      text-align: center;
+      color: #555;
+      font-size: 0.8rem;
+      margin-top: 48px;
+    }
   </style>
 </head>
 <body>
+
 <header>
-  <h1>&#8383; BTC Tracker</h1>
-  <p>Privacy Policy &middot; Last updated: March 20, 2026</p>
+  <h1>₿ BTC Tracker</h1>
+  <p>Privacy Policy · Last updated: March 20, 2026</p>
 </header>
+
 <main>
+
   <h2>1. Overview</h2>
-  <div class="card"><p>BTC Tracker is an iOS application for tracking Bitcoin investments. This Privacy Policy explains what data is collected, how it is used, and your rights.</p></div>
+  <div class="card">
+    <p>BTC Tracker ("the App") is an iOS application for tracking Bitcoin investments. This Privacy Policy explains what data is collected, how it is used, and your rights. By using the App, you agree to this policy.</p>
+  </div>
+
   <h2>2. Data We Collect</h2>
   <div class="card">
-    <p><strong>Stored only on your device:</strong> Bitcoin transaction records, app preferences (currency, reward expiry).</p>
-    <p style="margin-top:12px"><strong>Via Google AdMob (with consent):</strong> Device advertising identifier (IDFA), approximate IP-based location, app usage signals.</p>
-    <p style="margin-top:12px"><strong>Not collected:</strong> Names, email addresses, financial account data, precise GPS location.</p>
+    <p><strong>Data stored only on your device:</strong></p>
+    <ul>
+      <li>Your Bitcoin transaction records (date, amount, price, currency)</li>
+      <li>App preferences (selected currency, reward expiry)</li>
+    </ul>
+    <p style="margin-top:12px"><strong>Data collected via third-party advertising (Google AdMob):</strong></p>
+    <ul>
+      <li>Device advertising identifier (IDFA) — only with your explicit consent</li>
+      <li>Approximate IP-based location (country/region level)</li>
+      <li>App usage signals for ad measurement</li>
+    </ul>
+    <p style="margin-top:12px"><strong>We do not collect:</strong> names, email addresses, financial account data, precise GPS location, or any other personal information.</p>
   </div>
+
   <h2>3. How We Use Your Data</h2>
-  <div class="card"><ul>
-    <li><span class="badge">LOCAL</span> Transaction data stays on device, never transmitted to us.</li>
-    <li><span class="badge">ADS</span> AdMob shows relevant ads. With consent: personalized. Without: non-personalized.</li>
-    <li><span class="badge">PRICE</span> BTC prices fetched from CoinGecko API. No personal data sent.</li>
-  </ul></div>
+  <div class="card">
+    <ul>
+      <li><span class="badge">LOCAL</span> Transaction and preference data stays on your device and is never transmitted to us.</li>
+      <li><span class="badge">ADS</span> Google AdMob uses collected data to display relevant advertisements. With your consent, personalized ads may be shown. Without consent, only non-personalized ads are shown.</li>
+      <li><span class="badge">PRICE</span> Bitcoin price data is fetched from the CoinGecko public API. No personal data is sent in these requests.</li>
+    </ul>
+  </div>
+
   <h2>4. Third-Party Services</h2>
   <div class="card">
-    <p><strong>Google AdMob:</strong> <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
-    <p style="margin-top:10px"><strong>CoinGecko API:</strong> <a href="https://www.coingecko.com/en/privacy">coingecko.com/en/privacy</a></p>
+    <p><strong>Google AdMob</strong> — provides advertising services. Google's privacy policy applies to their data collection: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+    <p style="margin-top:10px"><strong>CoinGecko API</strong> — provides real-time and historical Bitcoin price data. No personal data is sent. CoinGecko's privacy policy: <a href="https://www.coingecko.com/en/privacy" target="_blank">coingecko.com/en/privacy</a></p>
   </div>
-  <h2>5. App Tracking Transparency</h2>
-  <div class="card"><p>On iOS 14.5+, we request ATT permission before accessing IDFA. Change anytime: iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking.</p></div>
+
+  <h2>5. App Tracking Transparency (iOS)</h2>
+  <div class="card">
+    <p>On iOS 14.5 and later, we request your permission via Apple's App Tracking Transparency (ATT) framework before accessing your device's advertising identifier. You can change this permission at any time in <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>.</p>
+  </div>
+
   <h2>6. EU / GDPR Rights</h2>
-  <div class="card"><ul>
-    <li><strong>Right of access</strong> &mdash; request a copy of your data</li>
-    <li><strong>Right to erasure</strong> &mdash; use in-app "Delete All" or uninstall</li>
-    <li><strong>Right to withdraw consent</strong> &mdash; via iOS Tracking Settings</li>
-  </ul></div>
+  <div class="card">
+    <p>If you are located in the European Union or European Economic Area, you have the following rights under the GDPR:</p>
+    <ul>
+      <li><strong>Right of access</strong> — request a copy of your data</li>
+      <li><strong>Right to rectification</strong> — correct inaccurate data</li>
+      <li><strong>Right to erasure</strong> — delete your data (use the in-app "Delete All" function or uninstall the app)</li>
+      <li><strong>Right to object</strong> — object to processing of your personal data</li>
+      <li><strong>Right to withdraw consent</strong> — withdraw advertising consent at any time via iOS Tracking Settings</li>
+    </ul>
+    <p style="margin-top:10px">Since all personal app data is stored locally on your device, you have full control. To delete all data, use <em>Data → Delete All</em> in the app.</p>
+  </div>
+
   <h2>7. California / CCPA Rights</h2>
-  <div class="card"><p>California residents may request disclosure, deletion, or opt-out of data sale. We do not sell personal data. Contact us below.</p></div>
-  <h2>8. Children's Privacy</h2>
-  <div class="card"><p>Not directed to children under 13 (or 16 in the EU). We do not knowingly collect data from children.</p></div>
-  <h2>9. Changes to This Policy</h2>
-  <div class="card"><p>We may update this policy. Changes reflected by "Last updated" date. Continued use = acceptance.</p></div>
-  <h2>10. Contact</h2>
-  <div class="card"><p><strong>[Your Name]</strong><br>[Your Address]<br>Email: <a href="mailto:your@email.com">your@email.com</a></p></div>
+  <div class="card">
+    <p>California residents have the right to know what personal information is collected, the right to delete personal information, and the right to opt out of the sale of personal information. We do not sell personal information. To exercise your rights, contact us at the address below.</p>
+  </div>
+
+  <h2>8. Data Retention</h2>
+  <div class="card">
+    <p>All transaction data is stored locally and retained until you delete it or uninstall the app. We do not store any data on external servers. Ad-related data is governed by Google's data retention policies.</p>
+  </div>
+
+  <h2>9. Children's Privacy</h2>
+  <div class="card">
+    <p>The App is not directed to children under the age of 13 (or 16 in the EU). We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us so we can delete it.</p>
+  </div>
+
+  <h2>10. Changes to This Policy</h2>
+  <div class="card">
+    <p>We may update this Privacy Policy from time to time. Changes will be reflected by the "Last updated" date at the top. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <h2>11. Contact</h2>
+  <div class="card">
+    <p>
+      <strong>Chris Kurr</strong><br>
+      Email: <a href="mailto:chris.kurr@me.com">chris.kurr@me.com</a>
+    </p>
+  </div>
+
 </main>
-<footer><p>&copy; 2026 BTC Tracker &middot; All rights reserved</p></footer>
+
+<footer>
+  <p>© 2026 BTC Tracker · All rights reserved</p>
+</footer>
+
 </body>
 </html>

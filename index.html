@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>BTC Tracker – Bitcoin Portfolio App for iPhone</title>
+  <meta name="description" content="Stack sats, track smart. BTC Tracker is a free iOS app for Bitcoiners and long-term savers. Log transactions, view live price charts, and keep your portfolio 100% private – no cloud, no account, no data shared.">
+  <meta name="keywords" content="bitcoin tracker, btc portfolio app, sats tracker, bitcoin ios app, crypto portfolio privacy, offline bitcoin app, dca tracker, hodl app, bitcoin savings app">
+  <meta name="author" content="Chris Kurr">
+  <link rel="canonical" href="https://chriskurr-bot.github.io/btctracker-privacy/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chriskurr-bot.github.io/btctracker-privacy/">
+  <meta property="og:title" content="BTC Tracker – Bitcoin Portfolio App">
+  <meta property="og:description" content="Stack sats, track smart. 100% private, 0% cloud. Free iOS app for Bitcoiners.">
+  <meta property="og:image" content="https://chriskurr-bot.github.io/btctracker-privacy/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BTC Tracker – Bitcoin Portfolio App">
+  <meta name="twitter:description" content="Stack sats, track smart. 100% private. Free iOS app.">
+  <meta name="twitter:image" content="https://chriskurr-bot.github.io/btctracker-privacy/og-image.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "BTC Tracker – Bitcoin Portfolio",
+    "operatingSystem": "iOS",
+    "applicationCategory": "FinanceApplication",
+    "applicationSubCategory": "Personal Finance",
+    "description": "BTC Tracker is a free iOS app for Bitcoiners and long-term savers.",
+    "url": "https://chriskurr-bot.github.io/btctracker-privacy/",
+    "featureList": ["Live Bitcoin price charts (EUR and USD)", "Portfolio performance tracking", "Transaction logging (buy, sell, DCA)", "100% offline – no account required", "GDPR and CCPA compliant", "Ad-free with one-time Premium upgrade"],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "category": "free" },
+    "author": { "@type": "Person", "name": "Chris Kurr", "email": "chris.kurr@me.com" },
+    "keywords": "bitcoin, btc, sats, portfolio, tracker, dca, hodl, privacy, offline, ios",
+    "inLanguage": ["en", "de"],
+    "datePublished": "2026-03-20",
+    "dateModified": "2026-03-20"
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Does BTC Tracker send my data to the cloud?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. All your transaction data is stored exclusively on your iPhone. Nothing is transmitted to any external server by BTC Tracker." } },
+      { "@type": "Question", "name": "Is BTC Tracker free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. BTC Tracker is free to download and use. A one-time optional Premium upgrade removes all ads and unlocks extended analysis features." } },
+      { "@type": "Question", "name": "What is BTC Tracker best for?",
+        "acceptedAnswer": { "@type": "Answer", "text": "BTC Tracker is best for Bitcoiners and long-term savers who want a simple, privacy-first way to log their Bitcoin purchases and track their DCA strategy." } },
+      { "@type": "Question", "name": "Does BTC Tracker work offline?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your portfolio data is always available offline. An internet connection is only needed to refresh the live Bitcoin price and chart data." } }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --orange: #f7931a; --orange-dim: rgba(247,147,26,0.15); --bg: #0a0a0a; --card: #111; --text: #e0e0e0; --muted: #888; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { border-bottom: 2px solid var(--orange); padding: 40px 20px 32px; text-align: center; background: #0d0d0d; }
+    .logo { font-size: 2.8rem; letter-spacing: -1px; }
+    header h1 { color: var(--orange); font-size: 1.6rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 12px; }
+    header p { color: var(--muted); font-size: 1rem; margin-top: 8px; max-width: 520px; margin-inline: auto; }
+    .cta-wrap { margin-top: 28px; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: #000; font-size: 1rem; font-weight: 700; letter-spacing: 1px; padding: 14px 32px; border-radius: 12px; text-decoration: none; transition: opacity .15s; }
+    .cta-btn:hover { opacity: .85; }
+    .cta-badge { display: inline-block; background: rgba(0,0,0,0.18); border-radius: 6px; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; letter-spacing: .5px; }
+    .tagline { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; padding: 20px; background: var(--orange-dim); border-bottom: 1px solid var(--orange); }
+    .tag { background: var(--card); border: 1px solid var(--orange); color: var(--orange); border-radius: 20px; font-size: 0.78rem; font-weight: 600; letter-spacing: 1px; padding: 5px 14px; }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+    h2 { color: var(--orange); font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(247,147,26,.3); }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 0; }
+    .feat { background: var(--card); border: 1px solid rgba(247,147,26,.25); border-radius: 12px; padding: 20px; }
+    .feat-icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .feat-title { color: var(--orange); font-size: 0.85rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 6px; }
+    .feat p { font-size: 0.88rem; color: #aaa; }
+    .privacy-box { background: var(--card); border: 2px solid var(--orange); border-radius: 14px; padding: 28px 24px; margin-top: 0; }
+    .privacy-box .headline { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .privacy-box p { font-size: 0.92rem; color: #aaa; }
+    .privacy-checks { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .privacy-checks li { font-size: 0.9rem; color: var(--text); }
+    .privacy-checks li::before { content: "✓  "; color: var(--orange); font-weight: 700; }
+    details { background: var(--card); border: 1px solid rgba(247,147,26,.2); border-radius: 10px; padding: 16px 20px; margin-bottom: 10px; cursor: pointer; }
+    details[open] { border-color: var(--orange); }
+    summary { font-size: 0.95rem; font-weight: 600; color: #ddd; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: " ↓"; color: var(--orange); float: right; }
+    details[open] summary::after { content: " ↑"; }
+    details p { font-size: 0.88rem; color: #aaa; margin-top: 12px; }
+    footer { border-top: 1px solid #222; padding: 28px 20px; text-align: center; color: var(--muted); font-size: 0.82rem; }
+    footer a { color: var(--orange); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">₿</div>
+  <h1>BTC Tracker</h1>
+  <p>The Bitcoin portfolio app for long-term thinkers.<br>Stack sats. Track smart. Stay private.</p>
+  <div class="cta-wrap">
+    <a class="cta-btn" href="https://apps.apple.com/app/btc-tracker/id000000000" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      Download on the App Store
+      <span class="cta-badge">FREE</span>
+    </a>
+  </div>
+</header>
+
+<div class="tagline" aria-label="Key features">
+  <span class="tag">100% Private</span>
+  <span class="tag">No Account</span>
+  <span class="tag">Live Charts</span>
+  <span class="tag">DCA Tracker</span>
+  <span class="tag">Offline Ready</span>
+  <span class="tag">GDPR + CCPA</span>
+  <span class="tag">iOS 16+</span>
+</div>
+
+<main>
+  <h2>What you get</h2>
+  <div class="features">
+    <div class="feat"><div class="feat-icon">📊</div><div class="feat-title">Live Charts</div><p>Real-time BTC price in EUR &amp; USD. Portfolio performance over any time horizon.</p></div>
+    <div class="feat"><div class="feat-icon">⚡</div><div class="feat-title">Fast Logging</div><p>Log a buy, sell, or DCA entry in seconds. No friction, no overhead.</p></div>
+    <div class="feat"><div class="feat-icon">🔒</div><div class="feat-title">Privacy First</div><p>All data stays on your iPhone. No server, no cloud, no tracking of your portfolio.</p></div>
+    <div class="feat"><div class="feat-icon">📱</div><div class="feat-title">Clean Design</div><p>Dark, focused, distraction-free. Exactly how a Bitcoiner likes it.</p></div>
+    <div class="feat"><div class="feat-icon">💾</div><div class="feat-title">Export &amp; Import</div><p>Your data belongs to you. Export or back it up whenever you want.</p></div>
+    <div class="feat"><div class="feat-icon">🌍</div><div class="feat-title">EUR &amp; USD</div><p>Switch between Euro and US Dollar at any time. Both currencies fully supported.</p></div>
+  </div>
+
+  <h2>Privacy you can trust</h2>
+  <div class="privacy-box">
+    <div class="headline">Not your keys, not your coins —<br>not your app, not your data.</div>
+    <p>Most finance apps phone home. BTC Tracker doesn’t.</p>
+    <ul class="privacy-checks">
+      <li>No account. No sign-up. No email required.</li>
+      <li>Transactions stored locally on your device only.</li>
+      <li>Bitcoin prices fetched without sending personal data.</li>
+      <li>Full GDPR (EU) and CCPA (California) compliance.</li>
+      <li>You can delete all data at any time — or just uninstall.</li>
+    </ul>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+
+  <details>
+    <summary>Does BTC Tracker send my portfolio data to the cloud?</summary>
+    <p>No. All your transaction data is stored exclusively on your iPhone. Nothing is transmitted to any external server by BTC Tracker.</p>
+  </details>
+  <details>
+    <summary>Is BTC Tracker free?</summary>
+    <p>Yes. Free to download. A one-time Premium upgrade removes all ads and unlocks extended portfolio analysis.</p>
+  </details>
+  <details>
+    <summary>What is BTC Tracker best for?</summary>
+    <p>Bitcoiners and long-term savers who want a simple, privacy-first way to log purchases, track DCA strategy, and visualise portfolio performance with live charts.</p>
+  </details>
+  <details>
+    <summary>Does the app work offline?</summary>
+    <p>Yes. Your portfolio data is always available offline. Internet is only needed to refresh live Bitcoin price and chart data.</p>
+  </details>
+  <details>
+    <summary>Is my data safe if I lose my iPhone?</summary>
+    <p>Your data is as secure as your iPhone (Face ID / Touch ID). Use the built-in Export function to create a backup in any encrypted location.</p>
+  </details>
+  <details>
+    <summary>Which iPhones are supported?</summary>
+    <p>BTC Tracker requires iOS 16.0 or later. Works on all iPhones that can run iOS 16+.</p>
+  </details>
+</main>
+
+<footer>
+  <p><a href="privacy-policy.html">Privacy Policy</a> · <a href="mailto:chris.kurr@me.com">Contact</a></p>
+  <p style="margin-top: 10px;">© 2026 BTC Tracker · All rights reserved · Built with 🟠 by Chris Kurr</p>
+</footer>
+
+</body>
+</html>

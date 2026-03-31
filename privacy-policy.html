@@ -66,8 +66,8 @@
 <body>
 
 <header>
-  <h1>₿ BTC Tracker</h1>
-  <p>Privacy Policy · Last updated: March 20, 2026</p>
+  <h1>&#x20BF; BTC Tracker</h1>
+  <p>Privacy Policy &middot; Last updated: March 31, 2026</p>
 </header>
 
 <main>
@@ -82,11 +82,12 @@
     <p><strong>Data stored only on your device:</strong></p>
     <ul>
       <li>Your Bitcoin transaction records (date, amount, price, currency)</li>
-      <li>App preferences (selected currency, reward expiry)</li>
+      <li>App preferences (selected currency, notification settings, PIN hash)</li>
+      <li>Hourly price reference data for spike-alert calculation (stored in UserDefaults, never transmitted)</li>
     </ul>
     <p style="margin-top:12px"><strong>Data collected via third-party advertising (Google AdMob):</strong></p>
     <ul>
-      <li>Device advertising identifier (IDFA) — only with your explicit consent</li>
+      <li>Device advertising identifier (IDFA) &mdash; only with your explicit consent via Apple&rsquo;s ATT prompt</li>
       <li>Approximate IP-based location (country/region level)</li>
       <li>App usage signals for ad measurement</li>
     </ul>
@@ -96,57 +97,84 @@
   <h2>3. How We Use Your Data</h2>
   <div class="card">
     <ul>
-      <li><span class="badge">LOCAL</span> Transaction and preference data stays on your device and is never transmitted to us.</li>
+      <li><span class="badge">LOCAL</span> Transaction and preference data stays on your device and is never transmitted to us or any third party.</li>
+      <li><span class="badge">PRICE</span> Bitcoin price data is fetched from public APIs (CoinGecko, Bitstamp, Kraken, Binance, Coinbase, Stooq). No personal data is included in these requests.</li>
+      <li><span class="badge">ALERTS</span> Market update notifications (daily briefing and hourly spike alerts) are generated locally on your device. No personal data is sent to any server to deliver these notifications.</li>
       <li><span class="badge">ADS</span> Google AdMob uses collected data to display relevant advertisements. With your consent, personalized ads may be shown. Without consent, only non-personalized ads are shown.</li>
-      <li><span class="badge">PRICE</span> Bitcoin price data is fetched from the CoinGecko public API. No personal data is sent in these requests.</li>
     </ul>
   </div>
 
-  <h2>4. Third-Party Services</h2>
+  <h2>4. Background App Refresh</h2>
   <div class="card">
-    <p><strong>Google AdMob</strong> — provides advertising services. Google's privacy policy applies to their data collection: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
-    <p style="margin-top:10px"><strong>CoinGecko API</strong> — provides real-time and historical Bitcoin price data. No personal data is sent. CoinGecko's privacy policy: <a href="https://www.coingecko.com/en/privacy" target="_blank">coingecko.com/en/privacy</a></p>
+    <p>When you enable Market Updates in the app, BTC Tracker uses iOS Background App Refresh to periodically fetch the current Bitcoin price &mdash; even when the app is not open. This allows the app to deliver hourly spike alerts (&plusmn;2% price change within 60 minutes) without requiring you to open the app.</p>
+    <p style="margin-top:10px"><strong>What is fetched:</strong> only the current BTC price from a public cryptocurrency API. No personal data is sent.</p>
+    <p style="margin-top:10px"><strong>How to disable:</strong> Go to iOS Settings &rarr; General &rarr; Background App Refresh and disable it for BTC Tracker. You can also turn off Market Updates entirely in the app under Settings &rarr; Display &amp; Alerts.</p>
   </div>
 
-  <h2>5. App Tracking Transparency (iOS)</h2>
+  <h2>5. Push Notifications</h2>
   <div class="card">
-    <p>On iOS 14.5 and later, we request your permission via Apple's App Tracking Transparency (ATT) framework before accessing your device's advertising identifier. You can change this permission at any time in <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>.</p>
+    <p>BTC Tracker can send the following optional local push notifications, generated entirely on your device:</p>
+    <ul>
+      <li><strong>Daily Briefing:</strong> a morning summary of the current BTC price, scheduled locally at 9:00 am.</li>
+      <li><strong>Hourly Spike Alert:</strong> a notification when BTC moves more than &plusmn;2% within a 60-minute window.</li>
+      <li><strong>Price Target Alert:</strong> a notification when the live BTC price crosses your personal buy or sell target.</li>
+    </ul>
+    <p style="margin-top:10px">All notifications are generated locally using iOS UserNotifications framework. No notification content or delivery data is sent to any server. You can disable notifications at any time in iOS Settings &rarr; Notifications &rarr; BTC Tracker, or from within the app.</p>
   </div>
 
-  <h2>6. EU / GDPR Rights</h2>
+  <h2>6. Third-Party Services</h2>
+  <div class="card">
+    <p><strong>Google AdMob</strong> &mdash; provides advertising services. Google&rsquo;s privacy policy applies to their data collection: <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></p>
+    <p style="margin-top:10px"><strong>Price Data APIs</strong> &mdash; the app fetches public BTC price data from the following sources. No personal data is sent to any of these services:</p>
+    <ul style="margin-top:6px">
+      <li>CoinGecko &mdash; <a href="https://www.coingecko.com/en/privacy" target="_blank">coingecko.com/en/privacy</a></li>
+      <li>Bitstamp &mdash; <a href="https://www.bitstamp.net/privacy-policy/" target="_blank">bitstamp.net/privacy-policy</a></li>
+      <li>Kraken &mdash; <a href="https://www.kraken.com/legal/privacy" target="_blank">kraken.com/legal/privacy</a></li>
+      <li>Binance &mdash; <a href="https://www.binance.com/en/privacy" target="_blank">binance.com/en/privacy</a></li>
+      <li>Coinbase &mdash; <a href="https://www.coinbase.com/legal/privacy" target="_blank">coinbase.com/legal/privacy</a></li>
+      <li>Stooq &mdash; historical price data, no personal data transmitted</li>
+    </ul>
+  </div>
+
+  <h2>7. App Tracking Transparency (iOS)</h2>
+  <div class="card">
+    <p>On iOS 14.5 and later, we request your permission via Apple&rsquo;s App Tracking Transparency (ATT) framework before accessing your device&rsquo;s advertising identifier. You can change this permission at any time in <strong>iOS Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong>.</p>
+  </div>
+
+  <h2>8. EU / GDPR Rights</h2>
   <div class="card">
     <p>If you are located in the European Union or European Economic Area, you have the following rights under the GDPR:</p>
     <ul>
-      <li><strong>Right of access</strong> — request a copy of your data</li>
-      <li><strong>Right to rectification</strong> — correct inaccurate data</li>
-      <li><strong>Right to erasure</strong> — delete your data (use the in-app "Delete All" function or uninstall the app)</li>
-      <li><strong>Right to object</strong> — object to processing of your personal data</li>
-      <li><strong>Right to withdraw consent</strong> — withdraw advertising consent at any time via iOS Tracking Settings</li>
+      <li><strong>Right of access</strong> &mdash; request a copy of your data</li>
+      <li><strong>Right to rectification</strong> &mdash; correct inaccurate data</li>
+      <li><strong>Right to erasure</strong> &mdash; delete your data via the in-app &ldquo;Delete All&rdquo; function or by uninstalling the app</li>
+      <li><strong>Right to object</strong> &mdash; object to processing of your personal data</li>
+      <li><strong>Right to withdraw consent</strong> &mdash; withdraw advertising consent at any time via iOS Tracking Settings</li>
     </ul>
-    <p style="margin-top:10px">Since all personal app data is stored locally on your device, you have full control. To delete all data, use <em>Data → Delete All</em> in the app.</p>
+    <p style="margin-top:10px">Since all personal app data is stored locally on your device, you have full control at all times.</p>
   </div>
 
-  <h2>7. California / CCPA Rights</h2>
+  <h2>9. California / CCPA Rights</h2>
   <div class="card">
     <p>California residents have the right to know what personal information is collected, the right to delete personal information, and the right to opt out of the sale of personal information. We do not sell personal information. To exercise your rights, contact us at the address below.</p>
   </div>
 
-  <h2>8. Data Retention</h2>
+  <h2>10. Data Retention</h2>
   <div class="card">
-    <p>All transaction data is stored locally and retained until you delete it or uninstall the app. We do not store any data on external servers. Ad-related data is governed by Google's data retention policies.</p>
+    <p>All transaction data is stored locally and retained until you delete it or uninstall the app. We do not store any data on external servers. Ad-related data is governed by Google&rsquo;s data retention policies.</p>
   </div>
 
-  <h2>9. Children's Privacy</h2>
+  <h2>11. Children&rsquo;s Privacy</h2>
   <div class="card">
     <p>The App is not directed to children under the age of 13 (or 16 in the EU). We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us so we can delete it.</p>
   </div>
 
-  <h2>10. Changes to This Policy</h2>
+  <h2>12. Changes to This Policy</h2>
   <div class="card">
-    <p>We may update this Privacy Policy from time to time. Changes will be reflected by the "Last updated" date at the top. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+    <p>We may update this Privacy Policy from time to time. Changes will be reflected by the &ldquo;Last updated&rdquo; date at the top. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
   </div>
 
-  <h2>11. Contact</h2>
+  <h2>13. Contact</h2>
   <div class="card">
     <p>
       <strong>Christopher Kurr</strong><br>
@@ -157,7 +185,7 @@
 </main>
 
 <footer>
-  <p>© 2026 BTC Tracker · All rights reserved</p>
+  <p>&copy; 2026 BTC Tracker &middot; All rights reserved</p>
 </footer>
 
 </body>
